@@ -12,8 +12,8 @@
     { "src": "/js/(.*)", "dest": "/public/js/$1" },
     { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
 
-    { "src": "/auth/loginpanel", "dest": "server.js" },
-    { "src": "/auth/dashboard", "dest": "server.js" },
+    { "src": "/loginpanel", "dest": "server.js" },
+    { "src": "/dashboard", "dest": "server.js" },
 
     { "src": "/", "dest": "server.js" },
     { "src": "/login", "dest": "server.js" },

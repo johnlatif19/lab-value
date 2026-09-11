@@ -24,6 +24,7 @@ let signRefreshToken = () => '';
 let verifyAccessToken = () => ({});
 let verifyRefreshToken = () => ({});
 let requirePageAuth = (req, res, next) => next();
+let requireAdmin = (req, res, next) => next();
 
 try {
   ({ hashPassword, verifyPassword } = require('./src/utils/password'));
@@ -34,6 +35,7 @@ try {
     verifyRefreshToken,
   } = require('./src/utils/jwt'));
   requirePageAuth = require('./src/middleware/requirePageAuth');
+  ({ requireAdmin } = require('./src/middleware/requirePageAuth'));
 } catch (err) {
   console.warn('⚠️  src/ modules not ready:', err.message);
 }
@@ -212,10 +214,12 @@ app.get('/sign-up', sendPage('sign-up.html'));
 app.get('/forgot-password', sendPage('forgot-password.html'));
 app.get('/reset-password', sendPage('reset-password.html'));
 app.get('/verify-email', sendPage('verify-email.html'));
-app.get('/auth/loginpanel', sendPage('auth/loginpanel.html'));
+
+// ✅ Admin login page — clean URL
+app.get('/loginpanel', sendPage('auth/loginpanel.html'));
 
 // ═════════════════════════════════════════════
-//  Pages — Protected
+//  Pages — Protected (تسجيل دخول مطلوب)
 // ═════════════════════════════════════════════
 
 app.get('/result', requirePageAuth, sendPage('result.html'));
@@ -224,7 +228,9 @@ app.get('/points', requirePageAuth, sendPage('points.html'));
 app.get('/book-visit', requirePageAuth, sendPage('book-visit.html'));
 app.get('/profile', requirePageAuth, sendPage('profile.html'));
 app.get('/notifications', requirePageAuth, sendPage('notifications.html'));
-app.get('/auth/dashboard', requirePageAuth, sendPage('auth/dashboard.html'));
+
+// ✅ Dashboard — protected + admin only
+app.get('/dashboard', requirePageAuth, requireAdmin, sendPage('auth/dashboard.html'));
 
 // ═════════════════════════════════════════════
 //  API — Meta

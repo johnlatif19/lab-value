@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="تأكيد البريد الإلكتروني لحسابك في فاليو لاب." />
+  <meta name="theme-color" content="#1a222c" />
+  <title>تأكيد البريد | فاليو لاب - Value Lab</title>
+  <link rel="icon" href="https://i.ibb.co/Q32HdtCF/image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/verify-email.css" />
+</head>
+<body>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+
+      <a href="/" class="auth-brand" aria-label="Value Lab Home">
+        <img src="https://i.ibb.co/Q32HdtCF/image.jpg" alt="Value Lab" />
+        <div class="auth-brand-text">
+          <span>فاليو لاب</span>
+          <small>Value Lab</small>
+        </div>
+      </a>
+
+      <!-- ====== Loading ====== -->
+      <div id="loadingBlock" class="state-block">
+        <div class="spinner" aria-hidden="true"></div>
+        <p class="state-text">جارٍ التحقق من الرابط...</p>
+      </div>
+
+      <!-- ====== Success ====== -->
+      <div id="successBlock" class="state-block hidden">
+        <div class="state-icon ok" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h1>تم تأكيد البريد</h1>
+        <p class="sub">شكرًا لك! بريدك الإلكتروني اتفعّل بنجاح، وجارٍ تحويلك...</p>
+        <a href="/login" class="btn-primary block-btn">تسجيل الدخول الآن</a>
+      </div>
+
+      <!-- ====== Error (token غير صالح / منتهي) ====== -->
+      <div id="errorBlock" class="state-block hidden">
+        <div class="state-icon error" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+        <h1 id="errorTitle">رابط غير صالح</h1>
+        <p class="sub" id="errorText">الرابط اللي فتحته غير صالح أو انتهت صلاحيته.</p>
+        <a href="/login" class="btn-primary block-btn">رجوع لتسجيل الدخول</a>
+      </div>
+
+      <!-- ====== Pending (لا يوجد token — المستخدم لسه ما فعّلش) ====== -->
+      <div id="pendingBlock" class="state-block hidden">
+        <div class="state-icon info" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="M2 6l10 7 10-7"/>
+          </svg>
+        </div>
+        <h1>تحقق مطلوب</h1>
+        <p class="sub">
+          فاضل خطوة واحدة! بعتنالك رابط تأكيد على بريدك الإلكتروني.
+          <br />
+          لو مش لاقيه، اتحقق من الـSpam أو اطلب رابط جديد.
+        </p>
+
+        <button type="button" class="btn-primary block-btn" id="resendBtn">إعادة إرسال الرابط</button>
+        <p class="msg" id="resendMsg" role="status" aria-live="polite"></p>
+
+        <a href="/login" class="link block-link">رجوع لتسجيل الدخول</a>
+      </div>
+
+      <p class="alt">
+        محتاج مساعدة؟
+        <a href="/" class="link">تواصل معنا</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="/public/js/verify-email.js"></script>
+</body>
+</html>

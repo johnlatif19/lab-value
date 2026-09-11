@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="تسجيل دخول لوحة تحكم فاليو لاب." />
+  <meta name="theme-color" content="#1a222c" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>لوحة التحكم | فاليو لاب - Value Lab</title>
+  <link rel="icon" href="https://i.ibb.co/Q32HdtCF/image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/auth/css/loginpanel.css" />
+</head>
+<body>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+
+      <a href="/" class="auth-brand" aria-label="Value Lab Home">
+        <img src="https://i.ibb.co/Q32HdtCF/image.jpg" alt="Value Lab" />
+        <div class="auth-brand-text">
+          <span>فاليو لاب</span>
+          <small>Value Lab — Admin</small>
+        </div>
+      </a>
+
+      <span class="admin-badge">لوحة التحكم</span>
+
+      <h1>تسجيل دخول الإدارة</h1>
+      <p class="sub">مخصص للموظفين المصرّح لهم فقط.</p>
+
+      <form id="adminLoginForm" novalidate>
+
+        <label>
+          <span>اسم المستخدم</span>
+          <input
+            name="username"
+            type="text"
+            required
+            minlength="3"
+            maxlength="50"
+            placeholder="admin"
+            autocomplete="username"
+            autofocus
+          />
+        </label>
+
+        <label>
+          <span>كلمة السر</span>
+          <input
+            name="password"
+            type="password"
+            required
+            minlength="8"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+        </label>
+
+        <button type="submit" class="btn-primary" id="submitBtn">دخول</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="alt">
+        <a href="/" class="link">← العودة للموقع</a>
+      </p>
+
+      <p class="security-note">
+        محاولات الدخول تُسجّل تلقائيًا لأغراض أمنية.
+      </p>
+
+    </div>
+  </div>
+
+  <script src="/public/auth/js/loginpanel.js"></script>
+</body>
+</html>

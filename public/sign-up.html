@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="أنشئ حسابك في فاليو لاب وتابع نتائجك أونلاين." />
+  <meta name="theme-color" content="#1a222c" />
+  <title>إنشاء حساب | فاليو لاب - Value Lab</title>
+  <link rel="icon" href="https://i.ibb.co/Q32HdtCF/image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/sign-up.css" />
+</head>
+<body>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+
+      <a href="/" class="auth-brand" aria-label="Value Lab Home">
+        <img src="https://i.ibb.co/Q32HdtCF/image.jpg" alt="Value Lab" />
+        <div class="auth-brand-text">
+          <span>فاليو لاب</span>
+          <small>Value Lab</small>
+        </div>
+      </a>
+
+      <h1>إنشاء حساب جديد</h1>
+      <p class="sub">املأ البيانات التالية لإنشاء حسابك في فاليو لاب.</p>
+
+      <form id="signupForm" novalidate>
+
+        <!-- ===== بيانات الحساب ===== -->
+        <div class="fieldset-title">بيانات الحساب</div>
+
+        <div class="grid-2">
+          <label>
+            <span>الاسم الأول</span>
+            <input name="firstName" type="text" required minlength="2" placeholder="أحمد" autocomplete="given-name" />
+          </label>
+          <label>
+            <span>اسم العائلة</span>
+            <input name="lastName" type="text" required minlength="2" placeholder="محمد" autocomplete="family-name" />
+          </label>
+        </div>
+
+        <label>
+          <span>اسم المستخدم</span>
+          <input
+            name="username"
+            type="text"
+            required
+            minlength="3"
+            maxlength="30"
+            pattern="^[a-zA-Z0-9_\.]+$"
+            placeholder="مثال: ahmed_mohamed"
+            autocomplete="username"
+          />
+          <small class="hint">حروف إنجليزية وأرقام و _ و . فقط — هتستخدمه لتسجيل الدخول.</small>
+        </label>
+
+        <label>
+          <span>رقم الهاتف</span>
+          <input name="phone" type="tel" required pattern="^[0-9+\-\s]{8,20}$" placeholder="01000000000" autocomplete="tel" />
+        </label>
+
+        <label>
+          <span>البريد الإلكتروني</span>
+          <input name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+        </label>
+
+        <div class="grid-2">
+          <label>
+            <span>كلمة السر</span>
+            <input name="password" type="password" required minlength="8" placeholder="8 أحرف على الأقل" autocomplete="new-password" />
+          </label>
+          <label>
+            <span>تأكيد كلمة السر</span>
+            <input name="confirmPassword" type="password" required minlength="8" placeholder="أعد الكتابة" autocomplete="new-password" />
+          </label>
+        </div>
+
+        <div class="grid-2">
+          <label>
+            <span>النوع</span>
+            <select name="gender" required>
+              <option value="">اختر</option>
+              <option value="male">ذكر</option>
+              <option value="female">أنثى</option>
+            </select>
+          </label>
+          <label>
+            <span>تاريخ الميلاد</span>
+            <input name="dob" type="date" required />
+          </label>
+        </div>
+
+        <!-- ===== العنوان ===== -->
+        <div class="fieldset-title">العنوان</div>
+
+        <div class="grid-2">
+          <label>
+            <span>المدينة</span>
+            <input name="city" type="text" required minlength="2" placeholder="القاهرة" />
+          </label>
+          <label>
+            <span>المنطقة</span>
+            <input name="area" type="text" required minlength="2" placeholder="مدينة نصر" />
+          </label>
+        </div>
+
+        <label>
+          <span>الشارع</span>
+          <input name="street" type="text" required minlength="2" placeholder="شارع عباس العقاد" />
+        </label>
+
+        <div class="grid-3">
+          <label>
+            <span>المبنى</span>
+            <input name="building" type="text" required placeholder="12" />
+          </label>
+          <label>
+            <span>الشقة</span>
+            <input name="apartment" type="text" required placeholder="5" />
+          </label>
+          <label>
+            <span>الطابق</span>
+            <input name="floor" type="text" required placeholder="3" />
+          </label>
+        </div>
+
+        <!-- ===== الموافقة ===== -->
+        <label class="check">
+          <input name="terms" type="checkbox" required />
+          <span>أوافق على <a href="#" class="link">الشروط والأحكام</a> و<a href="#" class="link">سياسة الخصوصية</a></span>
+        </label>
+
+        <button type="submit" class="btn-primary" id="submitBtn">إنشاء الحساب</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="alt">
+        عندك حساب بالفعل؟
+        <a href="/login" class="link">سجّل دخول</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="/public/js/sign-up.js"></script>
+</body>
+</html>

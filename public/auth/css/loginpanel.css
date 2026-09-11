@@ -1,0 +1,232 @@
+/* =========================================================
+   Value Lab — Admin Login (Dark Mode)
+   ========================================================= */
+
+:root {
+  --brand: #6f96b3;
+  --brand-dark: #5b7c99;
+  --brand-soft: #2b3a48;
+
+  --ink: #e8edf2;
+  --ink-2: #c7d1dc;
+  --muted: #8b98a8;
+
+  --line: #2c3742;
+
+  --bg-page: #1a222c;
+  --bg-card: #232e3a;
+  --bg-input: #1e2935;
+  --bg-input-focus: #223041;
+
+  --danger: #e07a7a;
+  --ok: #7fbf9b;
+  --warn: #d8b46a;
+
+  --radius: 14px;
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, .45);
+
+  --font: "Cairo", system-ui, "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ Layout ============ */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background:
+    radial-gradient(circle at top left, #1e2a38 0%, transparent 50%),
+    radial-gradient(circle at bottom right, #1d2a2a 0%, transparent 50%),
+    var(--bg-page);
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 36px;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* خط ملون رفيع في الأعلى كتمييز للأدمن */
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0; inset-inline: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #6f96b3, #7ea8a8);
+}
+
+/* ============ Brand ============ */
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.auth-brand img {
+  width: 44px; height: 44px;
+  border-radius: 11px;
+  object-fit: cover;
+}
+.auth-brand-text {
+  display: flex; flex-direction: column;
+  line-height: 1.15;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+.auth-brand-text small {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+/* ============ Admin badge ============ */
+.admin-badge {
+  display: inline-block;
+  background: rgba(111, 150, 179, .12);
+  color: var(--brand);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  margin-bottom: 14px;
+}
+
+/* ============ Headings ============ */
+h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.sub {
+  color: var(--muted);
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+/* ============ Form ============ */
+form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  font-size: 14px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+input {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  background: var(--bg-input);
+  color: var(--ink);
+  transition: border-color .15s, background .15s, box-shadow .15s;
+  width: 100%;
+}
+input::placeholder { color: #6f7d8c; }
+input:focus {
+  border-color: var(--brand);
+  background: var(--bg-input-focus);
+  box-shadow: 0 0 0 3px rgba(111, 150, 179, .18);
+}
+
+/* ============ Button ============ */
+.btn-primary {
+  background: var(--brand);
+  color: #10161d;
+  border: 0;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  font-family: inherit;
+  margin-top: 4px;
+}
+.btn-primary:hover { background: #82a5bf; }
+.btn-primary:active { transform: scale(.99); }
+.btn-primary:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* ============ Message ============ */
+.msg {
+  margin: 4px 0 0;
+  font-size: 14px;
+  min-height: 20px;
+  text-align: center;
+}
+.msg.error { color: var(--danger); }
+.msg.ok    { color: var(--ok); }
+
+/* ============ Alt ============ */
+.alt {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.link {
+  color: var(--brand);
+  font-weight: 600;
+  transition: color .2s;
+}
+.link:hover { color: #82a5bf; text-decoration: underline; }
+
+/* ============ Security note ============ */
+.security-note {
+  margin: 14px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+  opacity: .85;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 520px) {
+  .auth-card { padding: 26px 22px; }
+  h1 { font-size: 21px; }
+}
+
+/* ============ Focus ============ */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

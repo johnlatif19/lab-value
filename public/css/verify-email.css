@@ -1,0 +1,212 @@
+/* =========================================================
+   Value Lab — Verify Email (Dark Mode)
+   ========================================================= */
+
+:root {
+  --brand: #6f96b3;
+  --brand-dark: #5b7c99;
+  --brand-soft: #2b3a48;
+
+  --ink: #e8edf2;
+  --ink-2: #c7d1dc;
+  --muted: #8b98a8;
+
+  --line: #2c3742;
+
+  --bg-page: #1a222c;
+  --bg-card: #232e3a;
+  --bg-input: #1e2935;
+  --bg-input-focus: #223041;
+
+  --danger: #e07a7a;
+  --warn: #d8b46a;
+  --ok: #7fbf9b;
+  --info: #7ba7c4;
+
+  --radius: 14px;
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, .4);
+
+  --font: "Cairo", system-ui, "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden { display: none !important; }
+
+/* ============ Layout ============ */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: radial-gradient(circle at top, #202a36 0%, var(--bg-page) 60%);
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 36px;
+  width: 100%;
+  max-width: 460px;
+}
+
+/* ============ Brand ============ */
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.auth-brand img {
+  width: 44px; height: 44px;
+  border-radius: 11px;
+  object-fit: cover;
+}
+.auth-brand-text {
+  display: flex; flex-direction: column;
+  line-height: 1.15;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+.auth-brand-text small {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+/* ============ State blocks ============ */
+.state-block {
+  text-align: center;
+  animation: fadeIn .3s ease;
+  padding: 8px 0;
+}
+.state-block h1 {
+  margin: 16px 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.state-block .sub {
+  margin: 0 0 20px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.state-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+.state-icon.ok   { background: rgba(127, 191, 155, .12); color: var(--ok); }
+.state-icon.error{ background: rgba(224, 122, 122, .12); color: var(--danger); }
+.state-icon.info { background: rgba(123, 167, 196, .12); color: var(--info); }
+
+.state-text {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 8px 0 0;
+}
+
+/* ============ Buttons ============ */
+.btn-primary {
+  background: var(--brand);
+  color: #10161d;
+  border: 0;
+  padding: 13px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  font-family: inherit;
+  width: 100%;
+  margin-top: 4px;
+}
+.btn-primary:hover { background: #82a5bf; }
+.btn-primary:active { transform: scale(.99); }
+.btn-primary:disabled { opacity: .6; cursor: not-allowed; }
+
+.block-btn { display: block; text-align: center; text-decoration: none; margin-top: 6px; }
+.block-link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============ Message ============ */
+.msg {
+  margin: 10px 0 0;
+  font-size: 14px;
+  min-height: 20px;
+  text-align: center;
+}
+.msg.error { color: var(--danger); }
+.msg.ok    { color: var(--ok); }
+
+/* ============ Spinner ============ */
+.spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--brand);
+  margin: 0 auto 12px;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ Alt ============ */
+.alt {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.link {
+  color: var(--brand);
+  font-weight: 600;
+  transition: color .2s;
+}
+.link:hover { color: #82a5bf; text-decoration: underline; }
+
+/* ============ Responsive ============ */
+@media (max-width: 520px) {
+  .auth-card { padding: 26px 22px; }
+  .state-block h1 { font-size: 19px; }
+}
+
+/* ============ Focus ============ */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

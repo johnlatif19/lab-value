@@ -1,0 +1,225 @@
+/* =========================================================
+   Value Lab — Login (Dark Mode)
+   ========================================================= */
+
+:root {
+  --brand: #6f96b3;
+  --brand-dark: #5b7c99;
+  --brand-soft: #2b3a48;
+
+  --ink: #e8edf2;
+  --ink-2: #c7d1dc;
+  --muted: #8b98a8;
+
+  --line: #2c3742;
+
+  --bg-page: #1a222c;
+  --bg-card: #232e3a;
+  --bg-input: #1e2935;
+  --bg-input-focus: #223041;
+
+  --danger: #e07a7a;
+  --ok: #7fbf9b;
+
+  --radius: 14px;
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, .4);
+
+  --font: "Cairo", system-ui, "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg-page);
+  color: var(--ink);
+  line-height: 1.7;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ Layout ============ */
+.auth-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: radial-gradient(circle at top, #202a36 0%, var(--bg-page) 60%);
+}
+
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  padding: 36px;
+  width: 100%;
+  max-width: 440px;
+}
+
+/* ============ Brand ============ */
+.auth-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.auth-brand img {
+  width: 44px; height: 44px;
+  border-radius: 11px;
+  object-fit: cover;
+}
+.auth-brand-text {
+  display: flex; flex-direction: column;
+  line-height: 1.15;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink);
+}
+.auth-brand-text small {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: .5px;
+}
+
+/* ============ Headings ============ */
+h1 {
+  margin: 0 0 6px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.sub {
+  color: var(--muted);
+  margin: 0 0 24px;
+  font-size: 14px;
+}
+
+/* ============ Form ============ */
+form {
+  display: grid;
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 7px;
+  font-size: 14px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+
+input {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  background: var(--bg-input);
+  color: var(--ink);
+  transition: border-color .15s, background .15s, box-shadow .15s;
+  width: 100%;
+}
+input::placeholder { color: #6f7d8c; }
+input:focus {
+  border-color: var(--brand);
+  background: var(--bg-input-focus);
+  box-shadow: 0 0 0 3px rgba(111, 150, 179, .18);
+}
+
+/* ============ Row (remember + forgot) ============ */
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 14px;
+  color: var(--ink-2);
+  cursor: pointer;
+  font-weight: 500;
+}
+.check input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand);
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* ============ Links ============ */
+.link {
+  color: var(--brand);
+  font-weight: 600;
+  font-size: 14px;
+  transition: color .2s;
+}
+.link:hover { color: #82a5bf; text-decoration: underline; }
+
+/* ============ Button ============ */
+.btn-primary {
+  background: var(--brand);
+  color: #10161d;
+  border: 0;
+  padding: 13px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+  font-family: inherit;
+  margin-top: 4px;
+}
+.btn-primary:hover { background: #82a5bf; }
+.btn-primary:active { transform: scale(.99); }
+.btn-primary:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* ============ Message ============ */
+.msg {
+  margin: 4px 0 0;
+  font-size: 14px;
+  min-height: 20px;
+  text-align: center;
+}
+.msg.error { color: var(--danger); }
+.msg.ok    { color: var(--ok); }
+
+/* ============ Alt ============ */
+.alt {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 520px) {
+  .auth-card { padding: 26px 22px; }
+  h1 { font-size: 21px; }
+  .form-row { gap: 8px; }
+}
+
+/* ============ Focus (accessibility) ============ */
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

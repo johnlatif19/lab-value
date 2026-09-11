@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "server.js", "use": "@vercel/node" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "server.js" },
+
+    { "src": "/public/(.*)", "dest": "/public/$1" },
+    { "src": "/css/(.*)", "dest": "/public/css/$1" },
+    { "src": "/js/(.*)", "dest": "/public/js/$1" },
+    { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+
+    { "src": "/auth/loginpanel", "dest": "server.js" },
+    { "src": "/auth/dashboard", "dest": "server.js" },
+
+    { "src": "/", "dest": "server.js" },
+    { "src": "/login", "dest": "server.js" },
+    { "src": "/sign-up", "dest": "server.js" },
+    { "src": "/result", "dest": "server.js" },
+    { "src": "/testspackages", "dest": "server.js" },
+    { "src": "/points", "dest": "server.js" },
+    { "src": "/book-visit", "dest": "server.js" },
+    { "src": "/profile", "dest": "server.js" },
+    { "src": "/notifications", "dest": "server.js" },
+    { "src": "/forgot-password", "dest": "server.js" },
+    { "src": "/reset-password", "dest": "server.js" },
+    { "src": "/verify-email", "dest": "server.js" },
+
+    { "src": "/(.*)", "dest": "server.js" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/public/css/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    },
+    {
+      "source": "/public/js/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    }
+  ]
+}

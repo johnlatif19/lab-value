@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="برنامج النقاط والولاء من فاليو لاب." />
+  <meta name="theme-color" content="#1a222c" />
+  <title>النقاط | فاليو لاب - Value Lab</title>
+  <link rel="icon" href="https://i.ibb.co/Q32HdtCF/image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/points.css" />
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="/" class="brand">
+        <img src="https://i.ibb.co/Q32HdtCF/image.jpg" alt="Value Lab" class="brand-logo" />
+        <span class="brand-name">فاليو لاب<small>Value Lab</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="القائمة" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="/">الرئيسية</a>
+        <a href="/testspackages">التحاليل</a>
+        <a href="/result">النتائج</a>
+        <a href="/points" class="active">النقاط</a>
+        <a href="/profile">حسابي</a>
+        <button class="btn btn-outline" id="logoutBtn" type="button">خروج</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main class="container main">
+
+    <div class="page-head">
+      <div>
+        <h1>برنامج النقاط</h1>
+        <p class="sub">اجمع نقاط مع كل تحليل واستبدلها بخصومات على تحاليلك القادمة.</p>
+      </div>
+    </div>
+
+    <!-- Balance card -->
+    <section class="balance-card" aria-label="رصيد النقاط">
+      <div class="balance-inner">
+        <div class="balance-text">
+          <span class="balance-label">رصيدك الحالي</span>
+          <span class="balance-value" id="balanceValue">—</span>
+          <span class="balance-unit">نقطة</span>
+        </div>
+        <div class="balance-art" aria-hidden="true">
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 12v9H4v-9"/>
+            <path d="M2 7h20v5H2z"/>
+            <path d="M12 22V7"/>
+            <path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/>
+            <path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="balance-meta">
+        <div class="meta-item">
+          <span class="meta-label">إجمالي ما تم جمعه</span>
+          <span class="meta-value" id="totalEarned">—</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">إجمالي ما تم استبداله</span>
+          <span class="meta-value" id="totalRedeemed">—</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">آخر تحديث</span>
+          <span class="meta-value" id="lastUpdated">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how">
+      <h2>إزاي تكسب نقاط؟</h2>
+      <div class="how-grid">
+        <div class="how-card">
+          <span class="how-num">1</span>
+          <h3>احجز تحليل</h3>
+          <p>كل تحليل بتعمله في فاليو لاب بيديك نقاط.</p>
+        </div>
+        <div class="how-card">
+          <span class="how-num">2</span>
+          <h3>اجمع النقاط</h3>
+          <p>كل 10 جنيه = 1 نقطة (حسب قواعد المعمل).</p>
+        </div>
+        <div class="how-card">
+          <span class="how-num">3</span>
+          <h3>استبدلها</h3>
+          <p>استخدم نقاطك كخصومات على تحاليلك القادمة.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transactions -->
+    <section class="transactions">
+      <div class="section-head">
+        <div>
+          <h2>سجل المعاملات</h2>
+          <p class="sub">كل عمليات النقاط اللي اتعملت على حسابك.</p>
+        </div>
+
+        <div class="filters">
+          <select id="typeFilter" aria-label="فلترة النوع">
+            <option value="">كل الأنواع</option>
+            <option value="EARN">نقاط مكتسبة</option>
+            <option value="REDEEM">نقاط مستبدلة</option>
+            <option value="ADJUST">تعديل إداري</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="txList" class="tx-list" aria-live="polite">
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line"></div>
+      </div>
+
+      <div id="emptyState" class="empty-state hidden">
+        <h3>لا توجد معاملات</h3>
+        <p>لسه مفيش أي عمليات نقاط على حسابك. لما تحجز أول تحليل، هتلاقي هنا كل التفاصيل.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 فاليو لاب — Value Lab. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Auth guard أولًا، بعدين السكربت ===== -->
+  <script src="/public/js/core/auth-guard.js"></script>
+  <script src="/public/js/points.js" defer></script>
+</body>
+</html>

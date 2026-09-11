@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="لوحة تحكم فاليو لاب." />
+  <meta name="theme-color" content="#1a222c" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>لوحة التحكم | فاليو لاب - Value Lab</title>
+  <link rel="icon" href="https://i.ibb.co/Q32HdtCF/image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/auth/css/dashboard.css" />
+</head>
+<body>
+
+  <div class="layout">
+
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a href="/" class="brand">
+          <img src="https://i.ibb.co/Q32HdtCF/image.jpg" alt="Value Lab" class="brand-logo" />
+          <span class="brand-name">فاليو لاب<small>Admin Panel</small></span>
+        </a>
+      </div>
+
+      <nav class="side-nav">
+        <a href="#dashboard" class="side-link active" data-section="dashboard">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+          </span>
+          <span>نظرة عامة</span>
+        </a>
+
+        <a href="#patients" class="side-link" data-section="patients">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span>المرضى</span>
+        </a>
+
+        <a href="#orders" class="side-link" data-section="orders">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11H5a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2h-4"/><path d="M9 7V3h6v4"/></svg>
+          </span>
+          <span>الطلبات</span>
+        </a>
+
+        <a href="#results" class="side-link" data-section="results">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg>
+          </span>
+          <span>النتائج</span>
+        </a>
+
+        <a href="#tests" class="side-link" data-section="tests">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v3l-1 1v9a3 3 0 0 1-3 3h0a3 3 0 0 1-3-3V7L7 6V3z"/><path d="M9 14h6"/></svg>
+          </span>
+          <span>التحاليل</span>
+        </a>
+
+        <a href="#packages" class="side-link" data-section="packages">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </span>
+          <span>الباقات</span>
+        </a>
+
+        <a href="#homeVisits" class="side-link" data-section="homeVisits">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a2 2 0 0 1-2 2h-4v-6h-6v6H5a2 2 0 0 1-2-2v-9z"/></svg>
+          </span>
+          <span>زيارات منزلية</span>
+        </a>
+
+        <a href="#branches" class="side-link" data-section="branches">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+          </span>
+          <span>الفروع</span>
+        </a>
+
+        <a href="#points" class="side-link" data-section="points">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </span>
+          <span>النقاط</span>
+        </a>
+
+        <a href="#staff" class="side-link" data-section="staff">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          <span>الموظفين</span>
+        </a>
+
+        <a href="#reports" class="side-link" data-section="reports">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </span>
+          <span>التقارير</span>
+        </a>
+
+        <a href="#audit" class="side-link" data-section="audit">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <span>سجل التدقيق</span>
+        </a>
+
+        <a href="#settings" class="side-link" data-section="settings">
+          <span class="side-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </span>
+          <span>الإعدادات</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-foot">
+        <div class="user-info">
+          <div class="user-avatar" id="userAvatar">A</div>
+          <div class="user-meta">
+            <span class="user-name" id="userName">Admin</span>
+            <span class="user-role" id="userRole">SUPER_ADMIN</span>
+          </div>
+        </div>
+        <button class="btn-logout" id="logoutBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>خروج</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- ===== Mobile overlay ===== -->
+    <div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+
+    <!-- ===== Main content ===== -->
+    <main class="content">
+
+      <!-- Topbar -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="القائمة">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+
+        <h1 class="page-title" id="pageTitle">نظرة عامة</h1>
+
+        <div class="topbar-right">
+          <button class="icon-btn" id="refreshBtn" aria-label="تحديث">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          </button>
+          <a href="/" class="icon-btn" title="زيارة الموقع" aria-label="زيارة الموقع" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- ===== Sections ===== -->
+
+      <!-- 1. Overview -->
+      <section class="section active" data-section="dashboard">
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+          <div class="stat-card skeleton"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head">
+            <h2>الطلبات حسب الحالة</h2>
+          </div>
+          <div id="ordersByStatus" class="chart-area">
+            <div class="skeleton-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Patients -->
+      <section class="section" data-section="patients">
+        <div class="section-toolbar">
+          <input type="search" id="patientsSearch" placeholder="ابحث بالاسم، username، أو رقم الهاتف..." />
+          <button class="btn btn-primary" id="addPatientBtn">+ إضافة مريض</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>username</th>
+                <th>الهاتف</th>
+                <th>البريد</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="patientsTable">
+              <tr><td colspan="6" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination" id="patientsPagination"></div>
+      </section>
+
+      <!-- 3. Orders -->
+      <section class="section" data-section="orders">
+        <div class="section-toolbar">
+          <input type="search" id="ordersSearch" placeholder="ابحث برقم الطلب أو اسم المريض..." />
+          <select id="ordersStatusFilter">
+            <option value="">كل الحالات</option>
+            <option value="PENDING">في الانتظار</option>
+            <option value="PROCESSING">قيد التنفيذ</option>
+            <option value="COMPLETED">مكتمل</option>
+            <option value="CANCELLED">ملغي</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>رقم الطلب</th>
+                <th>المريض</th>
+                <th>الإجمالي</th>
+                <th>الحالة</th>
+                <th>التاريخ</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="ordersTable">
+              <tr><td colspan="6" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination" id="ordersPagination"></div>
+      </section>
+
+      <!-- 4. Results -->
+      <section class="section" data-section="results">
+        <div class="section-toolbar">
+          <input type="search" id="resultsSearch" placeholder="ابحث برقم الطلب..." />
+          <select id="resultsStatusFilter">
+            <option value="">كل الحالات</option>
+            <option value="DRAFT">مسودة</option>
+            <option value="READY_FOR_REVIEW">جاهز للمراجعة</option>
+            <option value="VERIFIED">معتمد</option>
+            <option value="PUBLISHED">منشور</option>
+          </select>
+          <button class="btn btn-primary" id="addResultBtn">+ رفع نتيجة</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>رقم الطلب</th>
+                <th>المريض</th>
+                <th>الحالة</th>
+                <th>تاريخ الاعتماد</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="resultsTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 5. Tests -->
+      <section class="section" data-section="tests">
+        <div class="section-toolbar">
+          <input type="search" id="testsSearch" placeholder="ابحث باسم التحليل..." />
+          <button class="btn btn-primary" id="addTestBtn">+ إضافة تحليل</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>التصنيف</th>
+                <th>السعر</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="testsTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. Packages -->
+      <section class="section" data-section="packages">
+        <div class="section-toolbar">
+          <input type="search" id="packagesSearch" placeholder="ابحث باسم الباقة..." />
+          <button class="btn btn-primary" id="addPackageBtn">+ إضافة باقة</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>السعر</th>
+                <th>السعر قبل الخصم</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="packagesTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 7. Home Visits -->
+      <section class="section" data-section="homeVisits">
+        <div class="section-toolbar">
+          <input type="search" id="visitsSearch" placeholder="ابحث برقم الزيارة أو اسم المريض..." />
+          <select id="visitsStatusFilter">
+            <option value="">كل الحالات</option>
+            <option value="NEW">جديد</option>
+            <option value="CONFIRMED">مؤكد</option>
+            <option value="ASSIGNED">معيّن</option>
+            <option value="ON_THE_WAY">في الطريق</option>
+            <option value="COLLECTED">تم السحب</option>
+            <option value="COMPLETED">مكتمل</option>
+            <option value="CANCELLED">ملغي</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>رقم الزيارة</th>
+                <th>المريض</th>
+                <th>الموعد</th>
+                <th>الحالة</th>
+                <th>الموظف</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="visitsTable">
+              <tr><td colspan="6" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 8. Branches -->
+      <section class="section" data-section="branches">
+        <div class="section-toolbar">
+          <input type="search" id="branchesSearch" placeholder="ابحث باسم الفرع..." />
+          <button class="btn btn-primary" id="addBranchBtn">+ إضافة فرع</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>العنوان</th>
+                <th>الهاتف</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="branchesTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 9. Points -->
+      <section class="section" data-section="points">
+        <div class="section-toolbar">
+          <input type="search" id="pointsSearch" placeholder="ابحث باسم المريض..." />
+          <button class="btn btn-primary" id="adjustPointsBtn">+ تعديل نقاط</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>المريض</th>
+                <th>الرصيد الحالي</th>
+                <th>إجمالي مكتسب</th>
+                <th>إجمالي مستبدل</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="pointsTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 10. Staff -->
+      <section class="section" data-section="staff">
+        <div class="section-toolbar">
+          <input type="search" id="staffSearch" placeholder="ابحث بالاسم أو username..." />
+          <button class="btn btn-primary" id="addStaffBtn">+ إضافة موظف</button>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>الاسم</th>
+                <th>username</th>
+                <th>الدور</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody id="staffTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 11. Reports -->
+      <section class="section" data-section="reports">
+        <div class="panel">
+          <div class="panel-head">
+            <h2>التقارير</h2>
+            <div class="panel-actions">
+              <input type="date" id="reportFrom" />
+              <input type="date" id="reportTo" />
+              <button class="btn btn-primary" id="generateReportBtn">توليد التقرير</button>
+            </div>
+          </div>
+          <div id="reportOutput" class="report-output">
+            <p class="muted">اختر نطاق التاريخ واضغط "توليد التقرير".</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 12. Audit Logs -->
+      <section class="section" data-section="audit">
+        <div class="section-toolbar">
+          <input type="search" id="auditSearch" placeholder="ابحث في السجل..." />
+          <select id="auditActionFilter">
+            <option value="">كل الإجراءات</option>
+            <option value="LOGIN">تسجيل دخول</option>
+            <option value="LOGOUT">تسجيل خروج</option>
+            <option value="PATIENT_UPDATE">تعديل مريض</option>
+            <option value="RESULT_PUBLISH">نشر نتيجة</option>
+            <option value="PRICE_CHANGE">تغيير سعر</option>
+            <option value="POINTS_ADJUST">تعديل نقاط</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>التاريخ</th>
+                <th>المستخدم</th>
+                <th>الإجراء</th>
+                <th>المورد</th>
+                <th>IP</th>
+              </tr>
+            </thead>
+            <tbody id="auditTable">
+              <tr><td colspan="5" class="empty-cell">جارٍ التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 13. Settings -->
+      <section class="section" data-section="settings">
+        <div class="panel">
+          <div class="panel-head"><h2>إعدادات النظام</h2></div>
+          <form class="settings-form" id="settingsForm">
+            <label>
+              <span>نقاط لكل 10 جنيه</span>
+              <input type="number" name="pointsPer10" min="0" step="1" value="1" />
+            </label>
+            <label>
+              <span>الحد الأدنى للاستبدال</span>
+              <input type="number" name="minRedeem" min="0" step="10" value="100" />
+            </label>
+            <label>
+              <span>البريد الرسمي</span>
+              <input type="email" name="contactEmail" placeholder="info@valuelab.local" />
+            </label>
+            <label>
+              <span>هاتف التواصل</span>
+              <input type="tel" name="contactPhone" placeholder="+20 100 000 0000" />
+            </label>
+            <button type="submit" class="btn btn-primary">حفظ الإعدادات</button>
+            <p class="msg" id="settingsMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ===== Modal container ===== -->
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" id="modalBox">
+      <div class="modal-head">
+        <h3 id="modalTitle">عنوان</h3>
+        <button class="modal-close" id="modalClose" aria-label="إغلاق">×</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-foot" id="modalFoot"></div>
+    </div>
+  </div>
+
+  <!-- ===== Toast container ===== -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- ===== Scripts ===== -->
+  <script src="/js/core/auth-guard.js"></script>
+  <script src="/auth/js/dashboard.js" defer></script>
+</body>
+</html>

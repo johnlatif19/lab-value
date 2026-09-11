@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="سجّل دخولك في فاليو لاب وتابع نتائجك أونلاين." />
+  <meta name="theme-color" content="#1a222c" />
+  <title>تسجيل الدخول | فاليو لاب - Value Lab</title>
+  <link rel="icon" href="https://i.ibb.co/Q32HdtCF/image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/public/css/login.css" />
+</head>
+<body>
+
+  <div class="auth-wrap">
+    <div class="auth-card">
+
+      <a href="/" class="auth-brand" aria-label="Value Lab Home">
+        <img src="https://i.ibb.co/Q32HdtCF/image.jpg" alt="Value Lab" />
+        <div class="auth-brand-text">
+          <span>فاليو لاب</span>
+          <small>Value Lab</small>
+        </div>
+      </a>
+
+      <h1>تسجيل الدخول</h1>
+      <p class="sub">ادخل باسم المستخدم وكلمة السر.</p>
+
+      <form id="loginForm" novalidate>
+
+        <label>
+          <span>اسم المستخدم</span>
+          <input
+            name="username"
+            type="text"
+            required
+            minlength="3"
+            maxlength="30"
+            pattern="^[a-zA-Z0-9_\.]+$"
+            placeholder="ahmed_mohamed"
+            autocomplete="username"
+            autofocus
+          />
+        </label>
+
+        <label>
+          <span>كلمة السر</span>
+          <input
+            name="password"
+            type="password"
+            required
+            minlength="8"
+            placeholder="••••••••"
+            autocomplete="current-password"
+          />
+        </label>
+
+        <div class="form-row">
+          <label class="check">
+            <input name="remember" type="checkbox" />
+            <span>تذكرني</span>
+          </label>
+
+          <a href="/forgot-password" class="link">نسيت كلمة السر؟</a>
+        </div>
+
+        <button type="submit" class="btn-primary" id="submitBtn">دخول</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="alt">
+        معندكش حساب؟
+        <a href="/sign-up" class="link">أنشئ حساب جديد</a>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="/public/js/login.js"></script>
+</body>
+</html>

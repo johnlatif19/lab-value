@@ -1,17 +1,3 @@
-/* =========================================================
-   Value Lab — Page-level Auth Guard (Server-side)
-   ─────────────────────────────────────────────
-   يمنع تسليم الصفحات المحمية لأي مستخدم غير مسجل.
-
-   - لو التوكن موجود وصالح → next()
-   - لو مش موجود / منتهي → redirect /login
-   - لو التوكن صالح بس المستخدم مش أدمن والصفحة أدمن → redirect /auth/loginpanel
-
-   الاستخدام في server.js:
-     app.get('/result', requirePageAuth, (req, res) => res.sendFile(...));
-     app.get('/auth/dashboard', requirePageAuth, requireAdmin, (req, res) => ...);
-   ========================================================= */
-
 const { verifyAccessToken } = require('../utils/jwt');
 
 /**
@@ -51,7 +37,7 @@ function requireAdmin(req, res, next) {
   const role = (req.user && req.user.role) ? String(req.user.role).toUpperCase() : '';
   const allowed = ['SUPER_ADMIN', 'ADMIN', 'LAB_MANAGER'];
   if (!allowed.includes(role)) {
-    return res.redirect('/auth/loginpanel');
+    return res.redirect('/loginpanel');
   }
   return next();
 }

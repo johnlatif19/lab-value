@@ -178,7 +178,7 @@
     });
 
     if (res.status === 401 || res.status === 403) {
-      window.location.href = '/auth/loginpanel';
+      window.location.href = '/loginpanel';
       throw new Error('unauthorized');
     }
 
@@ -195,7 +195,7 @@
       try {
         await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
       } catch (_) { /* ignore */ }
-      window.location.href = '/auth/loginpanel';
+      window.location.href = '/loginpanel';
     });
   }
 

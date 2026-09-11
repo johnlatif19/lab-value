@@ -26,8 +26,8 @@
     if (!data.username || data.username.length < 3) {
       return 'اسم المستخدم مطلوب (3 أحرف على الأقل)';
     }
-    if (!data.password || data.password.length < 8) {
-      return 'كلمة السر يجب أن تكون 8 أحرف على الأقل';
+    if (!data.password || data.password.length < 4) {
+      return 'كلمة السر يجب أن تكون 4 أحرف على الأقل';
     }
     return null;
   }
@@ -68,7 +68,7 @@
 
       setMsg('تم الدخول بنجاح، جارٍ التحويل...', 'ok');
       setTimeout(() => {
-        window.location.href = '/auth/dashboard';
+        window.location.href = '/dashboard';
       }, 700);
 
     } catch (err) {
